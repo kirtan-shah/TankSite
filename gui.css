@@ -87,21 +87,23 @@ body {
     display: block;
     background: rgba(255, 255, 255, 0.65);
     top: 0;
+    overflow-y: scroll;
     z-index: -10000;
 }
 
 #rotate {
     position: absolute;
-    left: 40%;
+    left: 0%;
     top: 0%;
 }
 .specs {
     position: absolute;
     top: 2%;
+    left: 250px;
 }
 .info {
     position: absolute;
-    left: 40.5%;
+    left: 1%;
     top: 250px;
 }
 
