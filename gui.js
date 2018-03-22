@@ -4,15 +4,23 @@ var right = false;
 
 var x = 0;
 var xinit = 0;
+var shot = false;
+var bulletx = 0;
+var counter = 0;
 
 window.onkeydown = function(event){
     if(event.keyCode === 32) {
+        if(!shot || bulletx > $("#tankpanel").width()) shoot();
         event.preventDefault();
     }
 };
 
 function shoot() {
-
+    shot = true;
+    bulletx = $("#tank").position().left;
+    console.log("shot");
+    $("#bullet").attr("src", $(".selected")[0].id + "bullet.png");
+    $("#explode").attr("src", $(".selected")[0].id + "explode.png");
 }
 
 $(document).ready(function() {
@@ -56,6 +64,7 @@ $(document).ready(function() {
 
     x = $("#tank").position().left;
     xinit = x;
+    bulletx = x;
 
     $("#infoback").css("height", t34.height() + $("#tankpanel").height() + "px");
 
@@ -69,7 +78,7 @@ $(document).ready(function() {
     });
     $(document.body).keypress(function( event ) {
         if(event.which == 32) {
-            shoot();
+            console.log("ting");
         }
     });
 
@@ -78,6 +87,13 @@ $(document).ready(function() {
         if(left) x -= speed;
         if(right) x += speed;
         $("#tank").css("left", x+"px");
+        if(shot) {
+            bulletx += 4;
+            $("#bullet").css("left", bulletx + "px");
+            $("#explode").css("left", bulletx + "px");
+            $("#explode").css("width", 40 + 2*Math.sin(counter) + "%");
+        }
+        counter += 0.1;
     }, 20);
 
 

@@ -40,6 +40,12 @@ body {
     left: 5%;
     bottom: 25%;
 }
+#bullet, #explode {
+    width: 40%;
+    position: absolute;
+    left: 5%;
+    bottom: 25%;
+}
 #ground {
     width: 60%;
     position: absolute;
