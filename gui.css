@@ -1,11 +1,15 @@
 @import url('https://fonts.googleapis.com/css?family=Montserrat');
 
+body {
+    background: orange;
+}
+
 .tank {
 
     font-family: 'Montserrat', sans-serif;
     position: absolute;
     top: 0;
-    width: 300px;
+    width: 20%;
     height: 60px;
     margin: none;
     padding: none;
@@ -14,6 +18,51 @@
     background: rgb(0, 140, 220);
     font-size: 22px;
 
+}
+
+#tank {
+    width: 40%;
+    position: absolute;
+    left: 5%;
+    bottom: 25%;
+}
+#ground {
+    width: 60%;
+    position: absolute;
+    left: 0;
+    top: 75%;
+}
+#ground2 {
+    width: 60%;
+    position: absolute;
+    left: 60%;
+    top: 75%;
+}
+
+#tankpanel {
+    position: absolute;
+    overflow: hidden;
+    width: 40%;
+    height: 60%;
+    display: block;
+    left: 0;
+    background: rgb(100, 200, 130);
+}
+#tankpanel:after {
+    content: 'ARROWS TO MOVE, SPACE TO SHOOT';
+    font-style: bold;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 20px;
+    color: rgb(60, 70, 20);
+    position: absolute;
+    top: 100%;
+    left: 0;
+}
+
+#rotate {
+    position: absolute;
+    left: 45%;
+    top: 20%;
 }
 
 .selected {
