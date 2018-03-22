@@ -59,6 +59,8 @@ $(document).ready(function() {
         $("#" + this.id + "info").css("display", "inline");
         $("#" + this.id + "specs").css("display", "inline");
         $("#" + this.id + "specs").css("left", $("#rotate").width() + $("#rotate").position().left + 10 + "px");
+        if(this.id == "t34")     $("#infoback").css("height", window.innerHeight + "px");
+        else     $("#infoback").css("height", t34.height() + $("#tankpanel").height() + "px");
         x = xinit;
     });
 
@@ -66,8 +68,7 @@ $(document).ready(function() {
     xinit = x;
     bulletx = x;
 
-    //$("#infoback").css("height", t34.height() + $("#tankpanel").height() + "px");
-    $("#infoback").css("height", window.innerHeight + "px");
+    $("#infoback").css("height", t34.height() + $("#tankpanel").height() + "px");
 
     $(document.body).keydown(function( event ) {
       if (event.which == 37) left = true;
