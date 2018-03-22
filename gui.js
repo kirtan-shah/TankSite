@@ -47,12 +47,17 @@ $(document).ready(function() {
         $("#rotate").attr("src", this.id+"rotate.gif");
         $("#tank").attr("src", this.id+".png");
         $(".info").css("display", "none");
+        $(".specs").css("display", "none");
         $("#" + this.id + "info").css("display", "inline");
+        $("#" + this.id + "specs").css("display", "inline");
+        $("#" + this.id + "specs").css("left", $("#rotate").width() + $("#rotate").position().left + 10 + "px");
         x = xinit;
     });
 
     x = $("#tank").position().left;
     xinit = x;
+
+    $("#infoback").css("height", t34.height() + $("#tankpanel").height() + "px");
 
     $(document.body).keydown(function( event ) {
       if (event.which == 37) left = true;
