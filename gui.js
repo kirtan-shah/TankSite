@@ -66,7 +66,8 @@ $(document).ready(function() {
     xinit = x;
     bulletx = x;
 
-    $("#infoback").css("height", t34.height() + $("#tankpanel").height() + "px");
+    //$("#infoback").css("height", t34.height() + $("#tankpanel").height() + "px");
+    $("#infoback").css("height", window.innerHeight + "px");
 
     $(document.body).keydown(function( event ) {
       if (event.which == 37) left = true;
